@@ -1228,6 +1228,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 870698442283379655, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864898153233454607, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435179432627252249, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4327770683999312963, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.59695
@@ -1244,9 +1256,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3.68
       objectReference: {fileID: 0}
+    - target: {fileID: 6752560440474920331, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327908993569980538, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8478092790448266739, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
       propertyPath: m_Name
       value: christmas village with environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478092790448266739, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8478092790448266748, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2253,6 +2277,14 @@ PrefabInstance:
     - target: {fileID: 1995861525172088126, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967793442122228691, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+      propertyPath: points
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967793442122228691, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+      propertyPath: winPoints
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5134470044345049652, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
       propertyPath: m_LocalPosition.x
