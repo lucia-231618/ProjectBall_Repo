@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 24260227}
   m_Layer: 0
   m_Name: PlayerCam
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +397,10 @@ PrefabInstance:
     - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: m_Name
       value: PickUp_Bone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8381233916427116010, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -862,7 +866,7 @@ GameObject:
   - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1029,6 +1033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food_Meet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 227577062100369360, guid: 78aa69274795dd6458edadb8e3efe5c3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 604419740692424042, guid: 78aa69274795dd6458edadb8e3efe5c3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3976998
@@ -1146,6 +1154,10 @@ PrefabInstance:
     - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: m_Name
       value: PickUp_BlackHorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8381233916427116010, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1296,7 +1308,7 @@ GameObject:
   - component: {fileID: 410087042}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUp_MetalBerrel
       objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1631,7 +1647,7 @@ GameObject:
   - component: {fileID: 529545957}
   m_Layer: 0
   m_Name: LevelMusic
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,6 +1779,10 @@ PrefabInstance:
     - target: {fileID: 1995861525172088126, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995861525172088126, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3967793442122228691, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
       propertyPath: winPoints
@@ -2090,7 +2110,7 @@ GameObject:
   - component: {fileID: 690337545}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2295,6 +2315,10 @@ PrefabInstance:
     - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: m_Name
       value: PickUp_whiteHorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8381233916427116010, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2519,6 +2543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_TeddyBear_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4538858114342110109, guid: 05cdd40ea92f078498549cef979671cf, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2720,6 +2748,10 @@ PrefabInstance:
     - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: m_Name
       value: pickup_Meat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2987,6 +3019,10 @@ PrefabInstance:
     - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: m_Name
       value: PickUp_Teddy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8381233916427116010, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3375,6 +3411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUp_Berrel
       objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3621,6 +3661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonesCollection
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 290d6408170d27241b172a364ad9315e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3826,6 +3870,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 21a0efefc23669142bbda3f8ac3b7434, type: 3}
       propertyPath: m_Name
       value: Bones_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21a0efefc23669142bbda3f8ac3b7434, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4285,6 +4333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUp_Skull
       objectReference: {fileID: 0}
+    - target: {fileID: 4194353450020115679, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8381233916427116010, guid: 311094cf37feefb4abd4628f02255ccc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -4544,6 +4596,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 241483548451216613, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 941949119948023853, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285274079856478429, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941986544453539168, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3626449032674212017, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1121788
@@ -4584,9 +4652,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4163157883519811472, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795156411350811957, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304816601184053683, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009624636894347760, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6068730432161939225, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
       propertyPath: m_Name
       value: wild west railway station with environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068730432161939225, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501826406990627617, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653394324143620171, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924618531904284092, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495582481429691840, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4172515699534610674, guid: df6e0d5705c11244c8b08313c0fe392b, type: 3}
@@ -5724,6 +5828,10 @@ PrefabInstance:
     - target: {fileID: 227577062100369360, guid: 78aa69274795dd6458edadb8e3efe5c3, type: 3}
       propertyPath: m_Name
       value: Food_Meet
+      objectReference: {fileID: 0}
+    - target: {fileID: 227577062100369360, guid: 78aa69274795dd6458edadb8e3efe5c3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 604419740692424042, guid: 78aa69274795dd6458edadb8e3efe5c3, type: 3}
       propertyPath: m_LocalPosition.x
