@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Configuración del jugador")]
     public float speed = 10f; // Velocidad de movimiento
@@ -55,7 +55,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (timeRemaining <= 0)
         {
             timeRemaining = 0;
-            EndGame(false); // Se acabó el tiempo → pierdes
+            //EndGame(false); // Se acabó el tiempo → pierdes
         }
     }
     void OnTriggerEnter(Collider other)
@@ -67,8 +67,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
             foundPolizones++;
 
             // Si ya encontró todos → gana
-            if (foundPolizones >= totalPolizones)
-                EndGame(true);
+            if (foundPolizones >= totalPolizones) ;
+                //EndGame(true);
         }
     }
 }
