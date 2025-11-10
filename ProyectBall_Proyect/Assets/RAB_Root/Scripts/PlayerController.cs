@@ -1,117 +1,75 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Editor References")]
-    public Rigidbody playerRb; //Referencia al Rigidbody del player
-    public AudioSource playerAudio; //Ref al emisor de sonidos del player
+    [Header("Configuración del jugador")]
+    public float speed = 10f; // Velocidad de movimiento
 
-    [Header("Movement Parameters")]
-    public float speed = 10;
-    public Vector2 moveInput; //Almac�n del input de movimiento de los perif�ricos que usamos para jugar
+    [Header("Configuración del juego")]
+    public float timeLimit = 60f; // Tiempo máximo en segundos
+    private float timeRemaining;  // Tiempo que queda
+    private int totalPolizones;   // Total de polizones en la escena
+    private int foundPolizones = 0; // Cuántos has encontrado
+    private bool gameEnded = false;
 
-    [Header("Jump Parameters")]
-    public float jumpForce = 6;
-    public bool isGrounded = true;
+    [Header("Interfaz UI")]
+    public Text timerText;
+    public Text polizonesText;
+    public Text infoText;
 
-    [Header("Respawn System")]
-    public float fallLimit = -10;
-    public Transform respawnPoint;
+    private Rigidbody rb;
 
-    [Header("Sound Configuration")]
-    public AudioClip[] soundCollection;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Obtiene el Rigidbody de la bola para poder moverla con física.
+        rb = GetComponent<Rigidbody>();
+        timeRemaining = timeLimit;
+
+        // Contamos cuántos polizones hay en la escena
+        totalPolizones = GameObject.FindGameObjectsWithTag("Polizon").Length;
+
+       
+        infoText.text = "¡Encuentra las anomalías!"; 
+
+    }
+
+    void FixedUpdate()
+    {
+        if (gameEnded) return;
+
+        // Movimiento de la bola
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.AddForce(movement * speed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //CinematicMovement();
-        //Respawn por altura
-        if (transform.position.y <= fallLimit)
+        if (gameEnded) return;
+
+        // Restar tiempo cada frame
+        timeRemaining -= Time.deltaTime;
+        if (timeRemaining <= 0)
         {
-            Respawn();
+            timeRemaining = 0;
+            //EndGame(false); // Se acabó el tiempo → pierdes
         }
     }
-
-    private void FixedUpdate()
+    void OnTriggerEnter(Collider other)
     {
-        //Update para calcular movimientos f�sicos
-        PhysicalMovement();
-    }
+        // Si el jugador toca un Polizon
+        if (other.CompareTag("Polizon"))
+        {
+            other.gameObject.SetActive(false); // lo “recogemos”
+            foundPolizones++;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true; //Devuelve la capacidad de saltar
-        }
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Respawn();
+            // Si ya encontró todos → gana
+            if (foundPolizones >= totalPolizones) ;
+                //EndGame(true);
         }
     }
-
-
-    void CinematicMovement()
-    {
-        //Movimiento = (Direcci�n * velocidad * input)
-        //Necesitais multiplicar el movimiento por Time.deltaTime
-        transform.Translate(Vector3.right * speed * moveInput.x * Time.deltaTime);
-        transform.Translate(Vector3.forward * speed * moveInput.y * Time.deltaTime);
-    }
-
-    void PhysicalMovement()
-    {
-        //A�adir una fuerza al rigidbody = (Direcci�n * velocidad * input)
-        playerRb.AddForce(Vector3.right * speed * moveInput.x);
-        playerRb.AddForce(Vector3.forward * speed * moveInput.y);
-    }
-
-    void Jump()
-    {
-        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        PlaySFX(0);
-    }
-
-    void Respawn()
-    {
-        //Sustituir el transform.position del player por el del punto de respawn
-        transform.position = respawnPoint.position;
-        //Resetear el valor de aceleraci�n del rigidbody
-        playerRb.linearVelocity = new Vector3(0,0,0);
-        PlaySFX(2);
-    }
-
-    public void PlaySFX(int soundToPlay)
-    {
-        playerAudio.PlayOneShot(soundCollection[soundToPlay]);
-    }
-
-    #region Input Methods
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-    }
-
-    public void OnJump(InputAction.CallbackContext context) 
-    {
-
-        if (context.performed && isGrounded == true)
-        {
-            isGrounded = false;
-            Jump();
-        }
-    }
-
-
-
-
-    #endregion
 }
+
