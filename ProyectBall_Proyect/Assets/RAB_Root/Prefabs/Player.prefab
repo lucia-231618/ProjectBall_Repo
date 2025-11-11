@@ -152,14 +152,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995861525172088126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c69758a3887bd904ab6486fd28cfd7a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cab408b09e56f446b05e19e1668a436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRb: {fileID: 0}
+  playerAudio: {fileID: 0}
   speed: 10
-  timeLimit: 60
-  timerText: {fileID: 0}
-  polizonesText: {fileID: 0}
-  infoText: {fileID: 0}
+  moveInput: {x: 0, y: 0}
+  jumpForce: 6
+  isGrounded: 1
+  fallLimit: -10
+  respawnPoint: {fileID: 0}
+  soundCollection: []
 --- !u!114 &6627527039181988549
 MonoBehaviour:
   m_ObjectHideFlags: 0
