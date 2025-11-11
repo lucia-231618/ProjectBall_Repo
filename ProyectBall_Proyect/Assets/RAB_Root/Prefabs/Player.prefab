@@ -67,6 +67,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -88,6 +90,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -120,10 +123,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995861525172088126}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -149,21 +152,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995861525172088126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b479cbc9cc0302446b71b06123d108ae, type: 3}
+  m_Script: {fileID: 11500000, guid: c69758a3887bd904ab6486fd28cfd7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRb: {fileID: 9168635855926228980}
-  playerAudio: {fileID: 3306933186985286059}
   speed: 10
-  moveInput: {x: 0, y: 0}
-  jumpForce: 6
-  isGrounded: 1
-  fallLimit: -10
-  respawnPoint: {fileID: 0}
-  soundCollection:
-  - {fileID: 8300000, guid: 189e38d2c71e9b04e943edb74ae1b8af, type: 3}
-  - {fileID: 8300000, guid: e28ddd58606f0c64ebf4141ecaec3e3c, type: 3}
-  - {fileID: 8300000, guid: cd513fc0bcd333e479ee6b486e4515f1, type: 3}
+  timeLimit: 60
+  timerText: {fileID: 0}
+  polizonesText: {fileID: 0}
+  infoText: {fileID: 0}
 --- !u!114 &6627527039181988549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   winPoints: 1
+  pointsText: {fileID: 0}
   sceneToLoad: 2
   playerCont: {fileID: 1219648076997504039}
 --- !u!82 &3306933186985286059
