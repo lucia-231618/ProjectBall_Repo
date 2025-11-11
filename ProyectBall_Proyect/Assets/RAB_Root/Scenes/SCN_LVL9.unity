@@ -119,101 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &24260226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 24260229}
-  - component: {fileID: 24260228}
-  - component: {fileID: 24260227}
-  m_Layer: 0
-  m_Name: PlayerCam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &24260227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24260226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrackerSettings:
-    BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 10, z: -10}
---- !u!114 &24260228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24260226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Priority:
-    Enabled: 0
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
---- !u!4 &24260229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24260226}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: 11, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!64 &103448649
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1259,8 +1164,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007863281, y: -0.000000050444186, z: -3.966568e-16, w: 1}
-  m_LocalPosition: {x: -12.626203, y: 5.46, z: 3.6456223}
+  m_LocalRotation: {x: 0.042956725, y: -0.17348297, z: 0.0075744325, w: 0.98387045}
+  m_LocalPosition: {x: -12.626203, y: 5.46, z: 8.645622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1542,37 +1447,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &464800509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 464800510}
-  m_Layer: 0
-  m_Name: Migracion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &464800510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464800509}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.03596, y: 5.8223, z: 6.98648}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &517376551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1583,7 +1457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6971990144641216050, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_Name
-      value: Battery_02
+      value: PickUp_Battery
       objectReference: {fileID: 0}
     - target: {fileID: 7749195999925335176, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1982,7 +1856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812130099695670223, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
       propertyPath: m_Name
-      value: Skull
+      value: PickUP_Skull
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 101489523486867664, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
@@ -2114,7 +1988,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2613116325076253113, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
       propertyPath: m_Name
-      value: Prop_WaterDrain
+      value: PickUP_WaterDrain
       objectReference: {fileID: 0}
     - target: {fileID: 3389090521174631171, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2222,7 +2096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6987150949061285597, guid: 17755911f12715b46abdc3db02860d36, type: 3}
       propertyPath: m_Name
-      value: Prop_WoodenChest_02
+      value: PickUp_Chest
       objectReference: {fileID: 0}
     - target: {fileID: 7763229839487962215, guid: 17755911f12715b46abdc3db02860d36, type: 3}
       propertyPath: m_LocalScale.x
@@ -2762,7 +2636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950081335510399260, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
       propertyPath: m_Name
-      value: Midicine_01
+      value: PickUP_Midicine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8636932524195115331, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
@@ -2907,7 +2781,6 @@ GameObject:
   - component: {fileID: 1318090517}
   - component: {fileID: 1318090516}
   - component: {fileID: 1318090515}
-  - component: {fileID: 1318090514}
   m_Layer: 0
   m_Name: Player cam
   m_TagString: Untagged
@@ -2915,35 +2788,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1318090514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318090513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Composition:
-    ScreenPosition: {x: 0, y: 0}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1318090515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,7 +2806,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -10}
+  FollowOffset: {x: 0, y: 0, z: -5}
 --- !u!114 &1318090516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,13 +2858,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318090513}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007863281, y: -0.000000050444186, z: -0.0000000036468562, w: 1}
-  m_LocalPosition: {x: -12.626203, y: 5.46, z: 3.6456223}
+  m_LocalRotation: {x: 0.042956725, y: -0.17348297, z: 0.0075744325, w: 0.98387045}
+  m_LocalPosition: {x: -12.626203, y: 5.46, z: 8.645622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: -20, z: 0}
 --- !u!65 &1325115404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3052,7 +2896,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1323323925329945069, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
       propertyPath: m_Name
-      value: Mask
+      value: PickUP_Mask
       objectReference: {fileID: 0}
     - target: {fileID: 1807830993518820183, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3242,7 +3086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048391854146100045, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
       propertyPath: m_Name
-      value: Coin_03
+      value: PickUP_Coin
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5464064443927467971, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
@@ -3489,7 +3333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7173272907924014290, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
       propertyPath: m_Name
-      value: Prop_Telephone
+      value: PickUP_Telephone
       objectReference: {fileID: 0}
     - target: {fileID: 7550079273366642280, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3576,7 +3420,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2383399900163821690, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_Name
-      value: Campfire
+      value: PickUP_Campfire
       objectReference: {fileID: 0}
     - target: {fileID: 3051286845876275904, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3790,7 +3634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8519531025310940939, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
       propertyPath: m_Name
-      value: GlassBottle_05
+      value: PickUP_Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 9038905840851199409, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3895,7 +3739,7 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 378792477}
-  - {fileID: 24260229}
+  - {fileID: 1318090517}
   - {fileID: 529545958}
   - {fileID: 198151682}
   - {fileID: 690337547}
@@ -3912,5 +3756,3 @@ SceneRoots:
   - {fileID: 898733023}
   - {fileID: 1878960606}
   - {fileID: 988136661}
-  - {fileID: 1318090517}
-  - {fileID: 464800510}
