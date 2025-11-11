@@ -1552,7 +1552,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6971990144641216050, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_Name
-      value: Pickup_Battery
+      value: PickUp_Battery
       objectReference: {fileID: 0}
     - target: {fileID: 7749195999925335176, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1951,7 +1951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812130099695670223, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
       propertyPath: m_Name
-      value: Skull
+      value: PickUP_Skull
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 101489523486867664, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
@@ -2083,7 +2083,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2613116325076253113, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
       propertyPath: m_Name
-      value: Prop_WaterDrain
+      value: PickUP_WaterDrain
       objectReference: {fileID: 0}
     - target: {fileID: 3389090521174631171, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2191,7 +2191,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6987150949061285597, guid: 17755911f12715b46abdc3db02860d36, type: 3}
       propertyPath: m_Name
-      value: Pickuo_WoodenChest
+      value: PickUp_Chest
       objectReference: {fileID: 0}
     - target: {fileID: 7763229839487962215, guid: 17755911f12715b46abdc3db02860d36, type: 3}
       propertyPath: m_LocalScale.x
@@ -2731,7 +2731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950081335510399260, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
       propertyPath: m_Name
-      value: Midicine_01
+      value: PickUP_Midicine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8636932524195115331, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
@@ -2991,7 +2991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1323323925329945069, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
       propertyPath: m_Name
-      value: Mask
+      value: PickUP_Mask
       objectReference: {fileID: 0}
     - target: {fileID: 1807830993518820183, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3181,7 +3181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048391854146100045, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
       propertyPath: m_Name
-      value: Coin_03
+      value: PickUP_Coin
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5464064443927467971, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
@@ -3428,7 +3428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7173272907924014290, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
       propertyPath: m_Name
-      value: Prop_Telephone
+      value: PickUP_Telephone
       objectReference: {fileID: 0}
     - target: {fileID: 7550079273366642280, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3515,7 +3515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2383399900163821690, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_Name
-      value: Campfire
+      value: PickUP_Campfire
       objectReference: {fileID: 0}
     - target: {fileID: 3051286845876275904, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3729,7 +3729,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8519531025310940939, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
       propertyPath: m_Name
-      value: GlassBottle_05
+      value: PickUP_Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 9038905840851199409, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
       propertyPath: m_LocalPosition.x
