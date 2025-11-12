@@ -1148,8 +1148,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 45, y: 5.822299, z: 45.000004}
-  m_Center: {x: 0, y: 2.9111495, z: 0}
+  m_Size: {x: 45, y: 3.6815531, z: 45.000004}
+  m_Center: {x: 0, y: 1.8407766, z: 0}
 --- !u!64 &320831362
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2865,6 +2865,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.96494675, y: 1.6716251, z: 0.9649465}
   m_Center: {x: 0.000002861023, y: 0.83581257, z: -0.0000006854534}
+--- !u!1 &1295793985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295793986}
+  m_Layer: 0
+  m_Name: PowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1295793986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295793985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.6293, y: 5.8223, z: 9.28065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318090513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,3 +3883,4 @@ SceneRoots:
   - {fileID: 1878960606}
   - {fileID: 988136661}
   - {fileID: 1318090517}
+  - {fileID: 1295793986}
