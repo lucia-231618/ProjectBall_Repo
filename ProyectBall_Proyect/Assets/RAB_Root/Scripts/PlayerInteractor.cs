@@ -1,68 +1,40 @@
-using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+锘縰sing UnityEngine;
 
+// Clase que detecta la interacci贸n del jugador con objetos del nivel:
+// - Polizones (objetos a recoger)
+// - Objetos incorrectos (penalizaci贸n de tiempo)
 public class PlayerInteractor : MonoBehaviour
 {
-    [Header("Points System")]
-    public int foundPolizones = 0;  //Cuantos polizones llevas
-    public int totalPolizones = 5;  //Total de polizones en el nivel
-    public TMP_Text pointsText;     //Texto en la UI para mostrar polizones
-   
-    [Header("Scene Management")] 
-    public int sceneToLoad = 2;     //Escena a cargar al ganar
-
     [Header("Sound References")]
-    public PlayerController playerCont; //Ref de sonido al recoger los polizones
+    public PlayerController playerCont; // Reproduce SFX del jugador al interactuar
 
-    private void UpdateUI() //Actualiza el texto de la UI cada vez que recoges un poliz髇.
-    {
-        if (pointsText != null)
-            pointsText.text = "Polizones: " + foundPolizones + " / " + totalPolizones;
-    }
-
-    private void WinLevel()
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        foundPolizones = 0;
-        UpdateUI();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Revisar si ya recogiste todos los polizones
-        if (foundPolizones >= totalPolizones)
-        {
-            WinLevel();
-        }
-
-    }
-
+    [Header("Timer Reference")]
+    public GameTimer gameTimer;         // Referencia al temporizador central
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Polizon")) // Detecta objetos etiquetados como "Polizon"
+        // Caso 1: Poliz贸n
+        if (other.gameObject.CompareTag("Polizon"))
         {
-            foundPolizones++;
+            other.gameObject.SetActive(false);       // Desactiva el objeto
+            if (gameTimer != null)
+                gameTimer.AddPolizon();              // Incrementa contador central de polizones
+            if (playerCont != null)
+                playerCont.PlaySFX(1);              // Sonido opcional del jugador
+        }
 
-            other.gameObject.SetActive(false);     // Desactiva el poliz髇 en lugar de destruirlo
+        // Caso 2: Objeto incorrecto
+        else if (other.gameObject.CompareTag("Interactuable"))
+        {
+            if (gameTimer != null)
+            {
+                gameTimer.RemoveTime(gameTimer.penaltyTime); // Resta tiempo
+                if (gameTimer.gameUI != null)
+                    gameTimer.gameUI.PlayPenaltySFX();      // Reproduce sonido de penalizaci贸n
+            }
 
-        if (playerCont != null)                    // Reproduce sonido del player
-                playerCont.PlaySFX(1);
-
-                         UpdateUI();               // Actualiza UI
+            if (playerCont != null)
+                playerCont.PlaySFX(2);                      // Sonido opcional del jugador
         }
     }
-
-    public void LoadScene()
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
-
 }

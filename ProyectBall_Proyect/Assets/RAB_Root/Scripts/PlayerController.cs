@@ -23,14 +23,6 @@ public class PlayerController : MonoBehaviour
     [Header("Sound Configuration")]
     public AudioClip[] soundCollection;
 
-    private int foundPolizones = 0; // Cuantos polizones has encontrado
-
-    public void SumarPolizon()
-    {
-        foundPolizones++;
-        PlaySFX(1); // sonido opcional
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,12 +32,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CinematicMovement();
-        //Respawn por altura
         if (transform.position.y <= fallLimit)
-        {
             Respawn();
-        }
 
     }
 
@@ -66,27 +54,6 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
     }
-
-    private void WinLevel()
-    {
-        // Cuando recoges todos los polizones, carga la siguiente escena
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    private void GameOver()
-    {
-        // Cuando el tiempo llega a 0, reinicia la escena actual
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    void CinematicMovement()
-    {
-        //Movimiento = (Dirección * velocidad * input)
-        //Necesitais multiplicar el movimiento por Time.deltaTime
-        transform.Translate(Vector3.right * speed * moveInput.x * Time.deltaTime);
-        transform.Translate(Vector3.forward * speed * moveInput.y * Time.deltaTime);
-    }
-
     void PhysicalMovement()
     {
         //Añadir una fuerza al rigidbody = (Dirección * velocidad * input)
@@ -130,9 +97,5 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
-
-
-
-
     #endregion
 }
