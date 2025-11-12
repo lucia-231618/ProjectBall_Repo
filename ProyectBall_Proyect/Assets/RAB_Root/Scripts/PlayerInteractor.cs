@@ -1,40 +1,73 @@
 ﻿using UnityEngine;
 
-// Clase que detecta la interacción del jugador con objetos del nivel:
-// - Polizones (objetos a recoger)
-// - Objetos incorrectos (penalización de tiempo)
+// Script de interacción por tecla para el jugador
 public class PlayerInteractor : MonoBehaviour
 {
     [Header("Sound References")]
-    public PlayerController playerCont; // Reproduce SFX del jugador al interactuar
+    public PlayerController playerCont;   // Para reproducir sonidos del jugador
 
     [Header("Timer Reference")]
-    public GameTimer gameTimer;         // Referencia al temporizador central
+    public GameTimer gameTimer;           // Para actualizar polizones y tiempo
+
+    [Header("Interaction Settings")]
+    public KeyCode interactKey = KeyCode.E; // Tecla para interactuar
+    public float interactionRange = 3f;     // Distancia máxima para interactuar
+
+    private GameObject nearbyObject;      // Objeto con el que se puede interactuar
+
+    void Update()
+    {
+        // Si hay un objeto cerca y el jugador presiona la tecla de interacción
+        if (nearbyObject != null && Input.GetKeyDown(interactKey))
+        {
+            InteractWithObject();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Caso 1: Polizón
-        if (other.gameObject.CompareTag("Polizon"))
+        // Guardamos el objeto si es interactuable o polizón
+        if (other.CompareTag("Polizon") || other.CompareTag("Interactuable"))
         {
-            other.gameObject.SetActive(false);       // Desactiva el objeto
-            if (gameTimer != null)
-                gameTimer.AddPolizon();              // Incrementa contador central de polizones
-            if (playerCont != null)
-                playerCont.PlaySFX(1);              // Sonido opcional del jugador
+            nearbyObject = other.gameObject;
         }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        // Limpiamos la referencia si el jugador se aleja
+        if (other.gameObject == nearbyObject)
+        {
+            nearbyObject = null;
+        }
+    }
+
+    void InteractWithObject()
+    {
+        if (nearbyObject == null) return;
+
+        // Caso 1: Polizón
+        if (nearbyObject.CompareTag("Polizon"))
+        {
+            nearbyObject.SetActive(false);                 // Desactiva el objeto
+            if (gameTimer != null)
+                gameTimer.AddPolizon();                    // Incrementa contador
+            if (playerCont != null)
+                playerCont.PlaySFX(1);                    // Reproduce sonido de recogida
+        }
         // Caso 2: Objeto incorrecto
-        else if (other.gameObject.CompareTag("Interactuable"))
+        else if (nearbyObject.CompareTag("Interactuable"))
         {
             if (gameTimer != null)
             {
                 gameTimer.RemoveTime(gameTimer.penaltyTime); // Resta tiempo
                 if (gameTimer.gameUI != null)
-                    gameTimer.gameUI.PlayPenaltySFX();      // Reproduce sonido de penalización
+                    gameTimer.gameUI.PlayPenaltySFX();      // Sonido penalización
             }
-
             if (playerCont != null)
-                playerCont.PlaySFX(2);                      // Sonido opcional del jugador
+                playerCont.PlaySFX(2);                      // Sonido opcional
         }
+
+        nearbyObject = null; // Limpiamos la referencia
     }
 }
