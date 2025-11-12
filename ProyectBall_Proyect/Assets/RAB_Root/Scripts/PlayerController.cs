@@ -23,20 +23,13 @@ public class PlayerController : MonoBehaviour
     [Header("Sound Configuration")]
     public AudioClip[] soundCollection;
 
+    private int foundPolizones = 0; // Cuantos polizones has encontrado
+
     public void SumarPolizon()
     {
         foundPolizones++;
         PlaySFX(1); // sonido opcional
     }
-
-    [Header("Time System")] 
-    public float timeLimit = 60f; // Tiempo máximo en segundos
-    private float timeRemaining;  // Tiempo que queda
-    public float penaltyTime = 10f; // Tiempo que resta al tocar un objeto no polizón
-    private int totalPolizones;   // Total de polizones en la escena
-    private int foundPolizones = 0; // Cuántos has encontrado
-    private bool gameEnded = false;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,10 +46,6 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
-       
-        Contador();
-
-
 
     }
 
@@ -76,29 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
-    }
-
-    private void Contador()
-    {
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;  //Cada frame se resta Time.deltaTime.
-            UpdateTimerUI();
-        }
-        else
-        {
-            GameOver();                       //Si llega a 0 ? GameOver() y se reinicia la escena
-        }
-
-        if (foundPolizones >= totalPolizones)
-        {
-            WinLevel();                      //Si recoges todos los polizones ? WinLevel() y se carga la siguiente escena
-        }
-    }
-
-    private void UpdateTimerUI()  //Función para actualizar la UI del tiempo
-    {
-        if (timeRemaining != null)
     }
 
     private void WinLevel()
