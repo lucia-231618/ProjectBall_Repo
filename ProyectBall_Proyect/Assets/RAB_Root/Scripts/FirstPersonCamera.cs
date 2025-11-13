@@ -1,75 +1,53 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem; // Necesario para el nuevo Input System
+using Unity.Mathematics;
 
-public class CameraOrbitBall_InputSystem : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
-    [Header("Referencias")]
-    public Transform ball; // La pelota o el objeto a seguir
+    [Header("Ajustes")]
+    [SerializeField] public float Sensibilidad = 100f;  // Sensibilidad del mouse
+    [SerializeField] public Transform Player;          // Referencia al jugador
 
-    [Header("Ajustes de cámara")]
-    public float distance = 5f;
-    public float height = 2f;
-    public float mouseSensitivity = 1f;
-    public float smoothSpeed = 10f;
+    [Header("Offset")]
+    public Vector3 offset = new Vector3(0, 2, -5);     // Distancia de la cámara respecto al jugador
 
-    private float yaw = 0f;
-    private float pitch = 20f;
-    private Vector3 currentVelocity;
-
-    // Referencia a los Input Actions generados
-    private PlayerControls controls;
-    private Vector2 lookInput;
-
-    void Awake()
-    {
-        controls = new PlayerControls(); // Creamos la instancia del input
-    }
-
-    void OnEnable()
-    {
-        controls.Camera.Look.Enable(); // Activamos la acción
-    }
-
-    void OnDisable()
-    {
-        controls.Camera.Look.Disable(); // La desactivamos al salir
-    }
+    [Header("Estados")]
+    [SerializeField] public float RotacionHorizontal = 0f;
+    [SerializeField] public float RotacionVertical = 0f;
 
     void Start()
     {
-        // 🔒 Bloquear cursor dentro de la pantalla
+        // Bloquear y ocultar cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    void Update()
-    {
-        // 🖱️ Leemos el input del mouse
-        lookInput = controls.Camera.Look.ReadValue<Vector2>();
-
-        // Aplicamos sensibilidad
-        yaw += lookInput.x * mouseSensitivity;
-        pitch -= lookInput.y * mouseSensitivity;
-
-        // Limitamos ángulo vertical
-        pitch = Mathf.Clamp(pitch, -10f, 60f);
-    }
-
     void LateUpdate()
     {
-        if (ball == null) return;
+        if (Player == null)
+        {
+            Debug.LogWarning("Camara: asigna (Player) en el Inspector.");
+            return;
+        }
 
-        // Calculamos la rotación de la cámara
-        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
+        // --- Movimiento: seguir al jugador ---
+        transform.position = Player.position + offset;
 
-        // Posición deseada (detrás y arriba del jugador)
-        Vector3 desiredPosition = ball.position - rotation * Vector3.forward * distance + Vector3.up * height;
+        // --- Rotación con mouse ---
+        float ValorX = Input.GetAxis("Mouse X") * Sensibilidad * Time.deltaTime;
+        float ValorY = Input.GetAxis("Mouse Y") * Sensibilidad * Time.deltaTime;
 
-        // Movimiento suave
-        transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref currentVelocity, 1f / smoothSpeed);
+        RotacionHorizontal += ValorX;
+        RotacionVertical -= ValorY;
 
-        // Mirar hacia la pelota
-        transform.LookAt(ball.position + Vector3.up * 1f);
+        // Limitar rotación vertical
+        RotacionVertical = math.clamp(RotacionVertical, -80f, 80f);
+
+        // Aplicar rotación vertical solo a la cámara
+        transform.localRotation = Quaternion.Euler(RotacionVertical, 0, 0);
+
+        // Aplicar rotación horizontal al jugador
+        Player.Rotate(Vector3.up * ValorX);
     }
 }
+
 

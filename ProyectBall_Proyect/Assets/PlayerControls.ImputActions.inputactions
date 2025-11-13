@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "PlayerContral.ImputActions",
+    "name": "PlayerControls.ImputActions",
     "maps": [
         {
             "name": "Camera",
