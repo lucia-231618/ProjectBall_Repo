@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource playerAudio; //Ref al emisor de sonidos del player
 
     [Header("Movement Parameters")]
-    public float speed = 5;
+    public float speed = 3;
     public Vector2 moveInput; //Almacén del input de movimiento de los periféricos que usamos para jugar
 
     [Header("Jump Parameters")]
