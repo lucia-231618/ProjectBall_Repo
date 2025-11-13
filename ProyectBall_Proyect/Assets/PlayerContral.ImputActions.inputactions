@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "PlayerContral.ImputActions",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "2418a80a-f2b8-428d-82f4-828b7acf2914",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "1045320f-5563-4819-8b53-9ef52aea0c03",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "61a0ad44-63eb-4846-86a6-92d6f89e183c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a153394d-f8dc-4d94-a6fe-6577c7429ce7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
