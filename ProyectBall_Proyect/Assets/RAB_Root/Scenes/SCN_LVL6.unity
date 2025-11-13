@@ -2160,6 +2160,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -19.53
       objectReference: {fileID: 0}
+    - target: {fileID: 2221074156855062190, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3021199384441735918, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
       propertyPath: m_Name
       value: camping forest with environment
@@ -2227,6 +2231,18 @@ PrefabInstance:
     - target: {fileID: 3576789904056856703, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
       propertyPath: m_Center.z
       value: 0.08368812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327652546425477465, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
+      propertyPath: m_Size.z
+      value: 2.9701233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327652546425477465, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
+      propertyPath: m_Center.z
+      value: -20.514942
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411653045226746165, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5853848956171069827, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
       propertyPath: m_Size.x
@@ -2301,7 +2317,6 @@ PrefabInstance:
     - {fileID: 3576789904990703191, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
     - {fileID: 7731724663615107298, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
     - {fileID: 7608003827709182571, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
-    - {fileID: 4327652546425477465, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
     - {fileID: 6476095675954722794, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
     - {fileID: 3892541634025149859, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
     m_RemovedGameObjects: []
@@ -2355,9 +2370,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2221074156855062190, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 774420341}
-    - targetCorrespondingSourceObject: {fileID: 2878484898601166450, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 774420340}
     - targetCorrespondingSourceObject: {fileID: 5411653045226746165, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 774420339}
@@ -2981,11 +2993,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5411653045226746165, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
   m_PrefabInstance: {fileID: 774420268}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &774420335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2878484898601166450, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
-  m_PrefabInstance: {fileID: 774420268}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &774420336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2221074156855062190, guid: 49a222b06343c1b478e144dd7d8890a6, type: 3}
@@ -3055,28 +3062,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 29520496960022613, guid: 1087f472c31ea1942a51e882ead935c5, type: 3}
---- !u!64 &774420340
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774420335}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4111559097179453198, guid: 3b4e3290fa5d770418458b0093b9d7e9, type: 3}
 --- !u!64 &774420341
 MeshCollider:
   m_ObjectHideFlags: 0
