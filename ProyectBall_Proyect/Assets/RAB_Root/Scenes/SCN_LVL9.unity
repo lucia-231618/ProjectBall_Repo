@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_Salto
       objectReference: {fileID: 0}
+    - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.24870002
@@ -447,13 +451,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 236450774}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!4 &236450772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 236450771}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &236450773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+  m_PrefabInstance: {fileID: 236450771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &236450774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236450773}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.451233, y: 2.2319016, z: 0.24383025}
+  m_Center: {x: -0.0000009536743, y: 0.0014596581, z: -0.121907465}
 --- !u!65 &246924352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1614,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_MasTiempo
       objectReference: {fileID: 0}
+    - target: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7773285482218860162, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.29117736
@@ -1669,13 +1706,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 471390153}
   m_SourcePrefab: {fileID: 100100000, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
 --- !u!4 &471390151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7773285482218860162, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
   m_PrefabInstance: {fileID: 471390150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &471390152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
+  m_PrefabInstance: {fileID: 471390150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &471390153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471390152}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6790127, y: 2.6634243, z: 1.6790131}
+  m_Center: {x: -0.00000003352364, y: 0.49946702, z: -0.000011486887}
 --- !u!1001 &517376551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1687,6 +1753,10 @@ PrefabInstance:
     - target: {fileID: 6971990144641216050, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_Name
       value: PickUp_Battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971990144641216050, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
       objectReference: {fileID: 0}
     - target: {fileID: 7749195999925335176, guid: dc9c54e71fb8f4d488e594f285f68d6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1760,7 +1830,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1798,6 +1868,10 @@ PrefabInstance:
     - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_Name
       value: PowerUp_Salto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_LocalScale.x
@@ -1854,13 +1928,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519790099}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!4 &519790097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 519790096}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &519790098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+  m_PrefabInstance: {fileID: 519790096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &519790099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519790098}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4512331, y: 2.2319016, z: 0.24383026}
+  m_Center: {x: 0.0000019073486, y: 0.0014634728, z: -0.12191892}
 --- !u!1 &529545956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,6 +2288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Skull
       objectReference: {fileID: 0}
+    - target: {fileID: 7812130099695670223, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 101489523486867664, guid: 8eab1926bcd310646853b417b6c5e74f, type: 3}
     m_RemovedGameObjects: []
@@ -2217,7 +2324,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2341,6 +2448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_WaterDrain
       objectReference: {fileID: 0}
+    - target: {fileID: 2613116325076253113, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 3389090521174631171, guid: bfacbef2bd9c7774f89c2e8edbecbda9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.915
@@ -2413,7 +2524,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2557,7 +2668,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2895,6 +3006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_Salto
       objectReference: {fileID: 0}
+    - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.24870001
@@ -2950,13 +3065,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1149704100}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!4 &1149704098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 1149704097}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1149704099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+  m_PrefabInstance: {fileID: 1149704097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1149704100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149704099}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4512342, y: 2.2319016, z: 0.24383049}
+  m_Center: {x: -0.000009540377, y: 0.0014672875, z: -0.12191519}
 --- !u!65 &1175032491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3128,6 +3272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Midicine
       objectReference: {fileID: 0}
+    - target: {fileID: 2950081335510399260, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8636932524195115331, guid: bab0af02c0368ab4eab1292d087f01fe, type: 3}
     m_RemovedGameObjects: []
@@ -3160,7 +3308,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3333,6 +3481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_Salto
       objectReference: {fileID: 0}
+    - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2487
@@ -3388,13 +3540,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1314077301}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!4 &1314077299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 1314077298}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314077300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+  m_PrefabInstance: {fileID: 1314077298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1314077301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314077300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4512331, y: 2.2319016, z: 0.24383026}
+  m_Center: {x: 0.000002861023, y: 0.0014672875, z: -0.12191367}
 --- !u!1 &1318090513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,6 +3704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Mask
       objectReference: {fileID: 0}
+    - target: {fileID: 1323323925329945069, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 1807830993518820183, guid: 655f14320808f7041ab4329e5980f66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.001012
@@ -3595,7 +3780,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3687,6 +3872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_Salto
       objectReference: {fileID: 0}
+    - target: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2487
@@ -3742,13 +3931,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1476468533}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!4 &1476468531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7857787365096382920, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 1476468530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1476468532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
+  m_PrefabInstance: {fileID: 1476468530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1476468533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476468532}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4512331, y: 2.2319016, z: 0.24383031}
+  m_Center: {x: -0.000001910982, y: 0.0014672875, z: -0.12191701}
 --- !u!65 &1479037347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3822,6 +4040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 1048391854146100045, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5464064443927467971, guid: 29b43586dc4121e4a826c74ff57a8a90, type: 3}
     m_RemovedGameObjects: []
@@ -3854,7 +4076,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3934,7 +4156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614354333}
   m_Layer: 0
-  m_Name: Assets
+  m_Name: PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4125,6 +4347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Telephone
       objectReference: {fileID: 0}
+    - target: {fileID: 7173272907924014290, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 7550079273366642280, guid: b95bfe9b76badbe47b2b7f910c57bffe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.929
@@ -4197,7 +4423,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4235,6 +4461,10 @@ PrefabInstance:
     - target: {fileID: 2383399900163821690, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_Name
       value: PickUP_Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383399900163821690, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
       objectReference: {fileID: 0}
     - target: {fileID: 3051286845876275904, guid: 860f38b8935df9b418392f55024ee9ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4308,7 +4538,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4474,6 +4704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUP_Bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 8519531025310940939, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 9038905840851199409, guid: 2586bd2aaf6e4344785fd6e0f7f214bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.304335
@@ -4546,7 +4780,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
