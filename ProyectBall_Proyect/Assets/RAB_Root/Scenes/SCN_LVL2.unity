@@ -2085,6 +2085,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1219648076997504039, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 2114799784}
+    - target: {fileID: 1219648076997504039, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 378792477}
@@ -2302,7 +2306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 139976214136822047, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.851
+      value: 4.901
       objectReference: {fileID: 0}
     - target: {fileID: 139976214136822047, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2773,6 +2777,11 @@ MeshCollider:
 --- !u!4 &2114799779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5134470044345049652, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+  m_PrefabInstance: {fileID: 1330639335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2114799784 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9168635855926228980, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
   m_PrefabInstance: {fileID: 1330639335}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
