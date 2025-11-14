@@ -1,5 +1,20 @@
 ﻿using UnityEngine;
 
+public class PowerUp : MonoBehaviour
+{
+    public void Activar(GameObject player)
+    {
+        Debug.Log("PowerUp activado!");
+    }
+}
+
+
+public class PickUp : MonoBehaviour
+{
+    public float tiempoQueDa = 5f;
+}
+
+
 // Script de interacción por tecla para el jugador
 public class PlayerInteractor : MonoBehaviour
 {
@@ -70,4 +85,34 @@ public class PlayerInteractor : MonoBehaviour
 
         nearbyObject = null; // Limpiamos la referencia
     }
+    private void CollectPickUp(GameObject pickUp)
+    {
+        float tiempoSumado = 5f; // tiempo por defecto
+
+        PickUp pickUpScript = pickUp.GetComponent<PickUp>();
+        if (pickUpScript != null)
+            tiempoSumado = pickUpScript.tiempoQueDa;
+
+        if (gameTimer != null)
+            gameTimer.RemoveTime(-tiempoSumado);
+
+
+        if (playerCont != null)
+            playerCont.PlaySFX(1);
+
+        Destroy(pickUp);
+    }
+
+    private void CollectPowerUp(GameObject powerUp)
+    {
+        PowerUp powerUpScript = powerUp.GetComponent<PowerUp>();
+        if (powerUpScript != null)
+            powerUpScript.Activar(gameObject);
+
+        if (playerCont != null)
+            playerCont.PlaySFX(3);
+
+        Destroy(powerUp);
+    }
+
 }
