@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Editor References")]
-    public Rigidbody playerRb; //Referencia al Rigidbody del player
-    public AudioSource playerAudio; //Ref al emisor de sonidos del player
+    public AudioSource playerAudio;
 
     [Header("Movement Parameters")]
     public float speed = 3;
-    public Vector2 moveInput; //Almacén del input de movimiento
+    public Vector2 moveInput;
 
     [Header("Jump Parameters")]
     public float jumpForce = 6;
@@ -25,41 +23,61 @@ public class PlayerController : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private Transform camara;
-    private CharacterController controlador;
-
-    [Header("Gravedad")]
-    [SerializeField] private float GravedadDelJugador = -9f;
-    private Vector3 velocidadVertical;
+    private Rigidbody rb;
 
     private void Awake()
     {
-        controlador = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Falta Rigidbody en el GameObject!");
+            enabled = false;
+            return;
+        }
 
-        if (camara == null && Camera.main != null)
-            camara = Camera.main.transform;
-    }
+        // Intentar asignar cámara automáticamente
+        if (camara == null)
+        {
+            if (Camera.main != null)
+                camara = Camera.main.transform;
+            else
+            {
+                // Buscar cámara con CameraFollow si no hay Main Camera
+                CameraFollow cameraScript = FindFirstObjectByType<CameraFollow>();  // Cambiado para evitar deprecación
+                if (cameraScript != null)
+                    camara = cameraScript.transform;
+                else
+                {
+                    Debug.LogError("PlayerController: No se encontró una cámara. Asigna manualmente en el Inspector.");
+                    enabled = false;
+                    return;
+                }
+            }
+        }
 
-    void Start()
-    {
-
+        if (playerAudio == null)
+            Debug.LogWarning("Falta AudioSource asignado!");
     }
 
     void Update()
     {
         if (transform.position.y <= fallLimit)
             Respawn();
-
-        MoverJugadorEnPlano();   // Aquí se aplica el movimiento con respecto a la cámara
-        AplicarGravedad();
     }
 
-    private void MoverJugadorEnPlano()
+    void FixedUpdate()
     {
-        // Capturamos las teclas (AWSD y Flechas)
-        float ValorHorizontal = Input.GetAxisRaw("Horizontal");
-        float ValorVertical = Input.GetAxisRaw("Vertical");
+        MoverJugador();
+        // AplicarGravedad();  // Comentado: Unity maneja gravedad por defecto. Descomenta si necesitas custom.
+    }
 
-        // Calculamos hacia donde mira la cámara solo en eje XZ
+    private void MoverJugador()
+    {
+        if (camara == null) return;  // Evitar errores si no se asignó
+
+        float ValorHorizontal = moveInput.x;
+        float ValorVertical = moveInput.y;
+
         Vector3 adelanteCamara = camara.forward;
         Vector3 derechaCamara = camara.right;
         adelanteCamara.y = 0f;
@@ -67,80 +85,60 @@ public class PlayerController : MonoBehaviour
         adelanteCamara.Normalize();
         derechaCamara.Normalize();
 
-        // Combina input con dirección de la cámara
         Vector3 direccionplano = derechaCamara * ValorHorizontal + adelanteCamara * ValorVertical;
 
-        // Normaliza para que diagonal no sea más rápida
         if (direccionplano.sqrMagnitude > 0.0001f)
             direccionplano.Normalize();
 
-        // --- NUEVO: mover al jugador usando CharacterController ---
-        if (controlador != null)
-        {
-            controlador.Move(direccionplano * speed * Time.deltaTime);
-        }
+        rb.MovePosition(rb.position + direccionplano * speed * Time.fixedDeltaTime);
 
-        // --- NUEVO: actualizar la rotación horizontal del jugador con la cámara ---
+        // Rotar al jugador hacia la dirección (solo si hay movimiento)
         if (direccionplano != Vector3.zero)
         {
             transform.forward = Vector3.Slerp(transform.forward, direccionplano, 0.1f);
         }
     }
 
-    private void AplicarGravedad()
-    {
-        velocidadVertical.y += GravedadDelJugador * Time.deltaTime;
-        controlador.Move(velocidadVertical * Time.deltaTime);
+    // private void AplicarGravedad()  // Deshabilitado por defecto
+    // {
+    //     if (!isGrounded)
+    //     {
+    //         rb.AddForce(Vector3.down * 9.8f, ForceMode.Acceleration);
+    //     }
+    // }
 
-        if (controlador.isGrounded && velocidadVertical.y < 0)
+    void Jump()
+    {
+        if (isGrounded)
         {
-            velocidadVertical.y = -2f;
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+            PlaySFX(0);
         }
     }
 
-    private void FixedUpdate()
+    void Respawn()
     {
-        PhysicalMovement();
+        rb.position = respawnPoint.position;
+        rb.linearVelocity = Vector3.zero;
+        PlaySFX(2);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true; // Devuelve la capacidad de saltar
+            isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Respawn();
-        }
-    }
-
-    void PhysicalMovement()
-    {
-        playerRb.AddForce(Vector3.right * speed * moveInput.x);
-        playerRb.AddForce(Vector3.forward * speed * moveInput.y);
-    }
-
-    void Jump()
-    {
-        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        PlaySFX(0);
-    }
-
-    void Respawn()
-    {
-        transform.position = respawnPoint.position;
-        playerRb.linearVelocity = new Vector3(0, 0, 0);
-        PlaySFX(2);
     }
 
     public void PlaySFX(int soundToPlay)
     {
-        playerAudio.PlayOneShot(soundCollection[soundToPlay]);
+        if (playerAudio != null && soundCollection.Length > soundToPlay)
+            playerAudio.PlayOneShot(soundCollection[soundToPlay]);
     }
 
     #region Input Methods
-
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
@@ -148,13 +146,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded == true)
+        if (context.performed)
         {
-            isGrounded = false;
             Jump();
         }
     }
-
     #endregion
 }
+
+
 
