@@ -41,12 +41,22 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Guardamos el objeto si es interactuable o polizón
+        // Detección existente para Polizon e Interactuable
         if (other.CompareTag("Polizon") || other.CompareTag("Interactuable"))
         {
             nearbyObject = other.gameObject;
         }
+        // NUEVO: Detección automática para Pickups y PowerUps
+        else if (other.CompareTag("Pickup"))  // Asume tag "Pickup" para objetos recolectables
+        {
+            CollectPickUp(other.gameObject);
+        }
+        else if (other.CompareTag("Powerup"))  // Asume tag "PowerUp"
+        {
+            CollectPowerUp(other.gameObject);
+        }
     }
+
 
     private void OnTriggerExit(Collider other)
     {

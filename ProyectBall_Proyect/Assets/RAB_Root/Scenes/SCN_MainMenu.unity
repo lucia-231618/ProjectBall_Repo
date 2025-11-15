@@ -449,29 +449,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You''re the ball and you must pick the green energy cubes to win! Beware
-    of obstacles and falling off the platform...
-
-
-    Use WASD/Arrow Keys/JOYSTICK/D-PAD
-    to move around.
-
-
-    Use SPace/Button South to jump.
-
-
-    Remember to have
-    fun!'
+  m_text: "Objective: You need to find the different objects scattered around the
+    map. You play as Bobo, whose mission is looking for the items. These items can
+    be detected because they stand out in the world. \r\n\r\nRules: You have a limited
+    amount time to find them, if you fail to pick up all the objects, then you loose
+    \r\nIf you fall out of the map, you respawn but you will lose your precious time. 
+    \r\nWhile playing, you'll be able to see your time and how many of the available
+    items do you have. \r\n\r\nControles: WASD movement, SPACE jump. \r\n\r\nPower
+    Ups:  \r\nStar: Gives you a hint. \r\nBlue arrow: Jump boost. \r\nGreen potion:
+    Extra time. \r\n\r\nCaution: On some levels you may find water. If you touch
+    it, you die. "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 792e88a049183c24e8b5f5d7445da13f, type: 2}
-  m_sharedMaterial: {fileID: -4271562800159097886, guid: 792e88a049183c24e8b5f5d7445da13f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc73e0b2ba42f084987dbb2358454cef, type: 2}
+  m_sharedMaterial: {fileID: 8840393541758317711, guid: bc73e0b2ba42f084987dbb2358454cef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280397245
-  m_fontColor: {r: 0.74213827, g: 0.6792091, b: 0.12835713, a: 1}
+    rgba: 4286611696
+  m_fontColor: {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -488,8 +485,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 62
+  m_fontSizeBase: 62
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -526,7 +523,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -334.93445, y: -62.59308, z: -286.78162, w: -131.35663}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1899,7 +1896,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.9803922, g: 0.5019608, b: 0.4470589, a: 0.5921569}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2177,8 +2174,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: RETURN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 792e88a049183c24e8b5f5d7445da13f, type: 2}
-  m_sharedMaterial: {fileID: -4271562800159097886, guid: 792e88a049183c24e8b5f5d7445da13f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc73e0b2ba42f084987dbb2358454cef, type: 2}
+  m_sharedMaterial: {fileID: 8840393541758317711, guid: bc73e0b2ba42f084987dbb2358454cef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
