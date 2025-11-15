@@ -2344,6 +2344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUp_Food
       objectReference: {fileID: 0}
+    - target: {fileID: 773100764339979173, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737360735354001458, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
     m_RemovedGameObjects: []
@@ -2352,6 +2356,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 773100764339979173, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1554729473}
+    - targetCorrespondingSourceObject: {fileID: 773100764339979173, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1554729475}
   m_SourcePrefab: {fileID: 100100000, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
 --- !u!1 &1554729472 stripped
 GameObject:
@@ -2373,7 +2380,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2384,6 +2391,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 139976214136822047, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
   m_PrefabInstance: {fileID: 1554729471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1554729475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554729472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c43d6c4bd3b44ba7c8746930523f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  playerCont: {fileID: 0}
+  gameUI: {fileID: 0}
 --- !u!65 &1567442345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2651,6 +2672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUp_Haystack
       objectReference: {fileID: 0}
+    - target: {fileID: 1461811644385850770, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     - target: {fileID: 2234547782785806120, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.84
@@ -2699,6 +2724,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1461811644385850770, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1893434221}
+    - targetCorrespondingSourceObject: {fileID: 1461811644385850770, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1893434223}
   m_SourcePrefab: {fileID: 100100000, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
 --- !u!1 &1893434220 stripped
 GameObject:
@@ -2720,7 +2748,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2731,6 +2759,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2234547782785806120, guid: 0f1e14a243a07364eacf8cde505a9c2b, type: 3}
   m_PrefabInstance: {fileID: 1893434219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893434223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893434220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c43d6c4bd3b44ba7c8746930523f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  playerCont: {fileID: 0}
+  gameUI: {fileID: 0}
 --- !u!65 &1975532177
 BoxCollider:
   m_ObjectHideFlags: 0
