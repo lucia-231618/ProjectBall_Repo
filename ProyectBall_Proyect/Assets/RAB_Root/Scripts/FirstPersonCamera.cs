@@ -4,7 +4,7 @@ using Unity.Mathematics;  // Opcional, puedes usar Mathf.Clamp en su lugar
 public class CameraFollow : MonoBehaviour
 {
     [Header("Ajustes")]
-    [SerializeField] public float Sensibilidad = 100f;  // Sensibilidad del mouse
+    [SerializeField] public float Sensibilidad = 50f;  // Sensibilidad del mouse
     [SerializeField] public Transform Player;          // Referencia al jugador
 
     [Header("Offset")]
