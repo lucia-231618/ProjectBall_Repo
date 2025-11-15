@@ -155,15 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab408b09e56f446b05e19e1668a436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRb: {fileID: 0}
-  playerAudio: {fileID: 0}
+  playerAudio: {fileID: 3306933186985286059}
   speed: 10
   moveInput: {x: 0, y: 0}
   jumpForce: 6
   isGrounded: 1
   fallLimit: -10
   respawnPoint: {fileID: 0}
-  soundCollection: []
+  soundCollection:
+  - {fileID: 8300000, guid: 7cef7468cf0dc3d469c6c3488aaf9804, type: 3}
+  - {fileID: 8300000, guid: 2179d0bfa0ab5034db77966a785b5cea, type: 3}
+  - {fileID: 8300000, guid: 3169a8b59a06c884aa1bc09999cd1622, type: 3}
+  camara: {fileID: 0}
 --- !u!114 &6627527039181988549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCont: {fileID: 1219648076997504039}
   gameTimer: {fileID: 0}
+  interactKey: 101
+  interactionRange: 3
 --- !u!82 &3306933186985286059
 AudioSource:
   m_ObjectHideFlags: 0
