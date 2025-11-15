@@ -22,21 +22,13 @@ public class PlayerInteractor : MonoBehaviour
     public PlayerController playerCont;   // Para reproducir sonidos del jugador
 
     [Header("Timer Reference")]
-    public GameTimer gameTimer;           // Para actualizar polizones y tiempo
-
-    [Header("Interaction Settings")]
-    public KeyCode interactKey = KeyCode.E; // Tecla para interactuar
-    public float interactionRange = 3f;     // Distancia máxima para interactuar
+    public GameUI gameUI;           // Referencia al script GameUI (maneja polizones, tiempo, etc.)
 
     private GameObject nearbyObject;      // Objeto con el que se puede interactuar
 
     void Update()
     {
-        // Si hay un objeto cerca y el jugador presiona la tecla de interacción
-        if (nearbyObject != null && Input.GetKeyDown(interactKey))
-        {
-            InteractWithObject();
-        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,22 +67,10 @@ public class PlayerInteractor : MonoBehaviour
         if (nearbyObject.CompareTag("Polizon"))
         {
             nearbyObject.SetActive(false);                 // Desactiva el objeto
-            if (gameTimer != null)
-                gameTimer.AddPolizon();                    // Incrementa contador
+            if (gameUI != null)
+                gameUI.AddPolizon();                    // Incrementa contador
             if (playerCont != null)
                 playerCont.PlaySFX(1);                    // Reproduce sonido de recogida
-        }
-        // Caso 2: Objeto incorrecto
-        else if (nearbyObject.CompareTag("Interactuable"))
-        {
-            if (gameTimer != null)
-            {
-                gameTimer.RemoveTime(gameTimer.penaltyTime); // Resta tiempo
-                if (gameTimer.gameUI != null)
-                    gameTimer.gameUI.PlayPenaltySFX();      // Sonido penalización
-            }
-            if (playerCont != null)
-                playerCont.PlaySFX(2);                      // Sonido opcional
         }
 
         nearbyObject = null; // Limpiamos la referencia
@@ -103,8 +83,8 @@ public class PlayerInteractor : MonoBehaviour
         if (pickUpScript != null)
             tiempoSumado = pickUpScript.tiempoQueDa;
 
-        if (gameTimer != null)
-            gameTimer.RemoveTime(-tiempoSumado);
+        if (gameUI != null)
+            gameUI.RemoveTime(-tiempoSumado);
 
 
         if (playerCont != null)

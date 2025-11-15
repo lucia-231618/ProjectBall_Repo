@@ -1,68 +1,142 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-// Clase que controla solo la interfaz de usuario:
-// - Textos de polizones y temporizador
-// - Colores de advertencia y parpadeo
-// - Sonidos relacionados con la UI
 public class GameUI : MonoBehaviour
 {
-    [Header("UI References")]
-    public TMP_Text timerText;   // Texto que muestra el tiempo
-    public TMP_Text pointsText;  // Texto que muestra polizones
+    [Header("UI Elements")]
+    public Text pointsText;      // Texto para mostrar los puntos
+    public Text timerText;       // Texto para mostrar el tiempo restante
+    public Text polizonText;     // Texto para mostrar el contador de polizones
 
-    [Header("Warnings")]
-    public float lowTimeThreshold = 10f;  // Tiempo mínimo para activar advertencia visual
-    public Color normalColor = Color.white; // Color normal del texto
-    public Color warningColor = Color.red;  // Color cuando el tiempo es bajo
-    public float blinkSpeed = 5f;          // Velocidad del parpadeo
+    [Header("Audio")]
+    public AudioSource audioSource;  // Para reproducir sonidos de penalización
 
-    [Header("Sound Effects")]
-    public AudioSource audioSource;        // Fuente de audio
-    public AudioClip polizonClip;          // Sonido al recoger polizón
-    public AudioClip penaltyClip;          // Sonido al perder tiempo
+    [Header("Game Logic")]
+    public float timeLimit = 60f;          // Tiempo máximo para completar el nivel
+    public float penaltyTime = 10f;        // Tiempo a restar al tocar un objeto incorrecto
+    public int totalPolizones = 5;         // Número total de polizones en el nivel
+    public string winSceneName = "WinScene";  // Nombre de la escena de victoria
+    public string loseSceneName = "LoseScene"; // Nombre de la escena de derrota
 
-    // Actualiza todos los elementos de la UI al inicio
-    public void UpdateAll(int foundPolizones, int totalPolizones, float timeRemaining)
+    private int points = 0;                // Contador de puntos
+    private float timeRemaining;           // Tiempo restante actual
+    private int foundPolizones = 0;        // Contador de polizones recogidos
+    private bool gameEnded = false;        // Evita que siga actualizando tras terminar
+
+    void Awake()
     {
-        UpdatePoints(foundPolizones, totalPolizones);
-        UpdateTimer(timeRemaining);
+        DontDestroyOnLoad(gameObject);  // El objeto GameUI no se destruye al cambiar escenas
     }
 
-    // Actualiza contador de polizones en pantalla
-    public void UpdatePoints(int foundPolizones, int totalPolizones)
+    void Start()
     {
-        if (pointsText != null)
-            pointsText.text = $"Polizones: {foundPolizones} / {totalPolizones}";
-
-        // Reproduce sonido al recoger polizón
-        if (audioSource != null && polizonClip != null)
-            audioSource.PlayOneShot(polizonClip);
+        ResetGame();  // Reinicia valores al iniciar
     }
 
-    // Actualiza el temporizador y controla el parpadeo si queda poco tiempo
-    public void UpdateTimer(float timeRemaining)
+    void Update()
     {
-        if (timerText == null) return;
+        if (gameEnded) return;           // Evita seguir contando tras finalizar
 
-        timerText.text = $"Tiempo: {Mathf.CeilToInt(timeRemaining)}s"; // Muestra segundos enteros
+        timeRemaining -= Time.deltaTime; // Resta el tiempo transcurrido en segundos
 
-        if (timeRemaining <= lowTimeThreshold) // Parpadeo de advertencia
+        if (timeRemaining <= 0f)         // Si se acaba el tiempo
         {
-            float lerp = Mathf.PingPong(Time.time * blinkSpeed, 1f);
-            timerText.color = Color.Lerp(normalColor, warningColor, lerp);
+            timeRemaining = 0f;
+            EndGame(false);              // Game Over
         }
-        else
-        {
-            timerText.color = normalColor;
-        }
+
+        UpdateTimerUI(timeRemaining);    // Actualiza la UI del temporizador
     }
 
-    // Reproduce sonido de penalización
+    // Método para sumar puntos
+    public void AddPoints(int amount)
+    {
+        points += amount;
+        UpdatePointsUI();
+    }
+
+    // Llamado cuando el jugador recoge un polizón
+    public void AddPolizon()
+    {
+        if (gameEnded) return;           // No hacer nada si el juego terminó
+
+        foundPolizones++;                // Incrementa el contador
+        UpdatePolizonUI();
+
+        if (foundPolizones >= totalPolizones) // Si se recogieron todos, gana
+            EndGame(true);
+    }
+
+    // Llamado cuando el jugador toca un objeto incorrecto
+    public void RemoveTime(float amount)
+    {
+        if (gameEnded) return;
+
+        timeRemaining -= amount;
+        if (timeRemaining < 0f) timeRemaining = 0f;
+
+        UpdateTimerUI(timeRemaining); // Actualiza temporizador
+
+        if (timeRemaining <= 0f)
+            EndGame(false);                    // Game Over si se acaba el tiempo
+    }
+
+    // Método para reproducir sonido de penalización
     public void PlayPenaltySFX()
     {
-        if (audioSource != null && penaltyClip != null)
-            audioSource.PlayOneShot(penaltyClip);
+        if (audioSource != null)
+            audioSource.Play();
     }
-}
 
+    // Termina el juego y carga la escena correspondiente
+    private void EndGame(bool won)
+    {
+        gameEnded = true;                   // Bloquea actualizaciones
+        string sceneToLoad = won ? winSceneName : loseSceneName; // Decide escena
+        SceneManager.LoadScene(sceneToLoad); // Carga escena
+        Destroy(gameObject, 0.1f);  // Destruye este objeto en escenas finales
+    }
+
+    // Reinicia los valores del juego (llámalo si pierdes o reinicias manualmente)
+    public void ResetGame()
+    {
+        points = 0;
+        timeRemaining = timeLimit;
+        foundPolizones = 0;
+        gameEnded = false;
+        UpdatePointsUI();
+        UpdateTimerUI(timeRemaining);
+        UpdatePolizonUI();
+    }
+
+    // Actualiza el texto de puntos
+    private void UpdatePointsUI()
+    {
+        if (pointsText != null)
+            pointsText.text = "Puntos: " + points.ToString();
+    }
+
+    // Actualiza el texto del timer
+    private void UpdateTimerUI(float time)
+    {
+        if (timerText != null)
+        {
+            int minutes = Mathf.FloorToInt(time / 60);
+            int seconds = Mathf.FloorToInt(time % 60);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+    }
+
+    // Actualiza el texto de polizones
+    private void UpdatePolizonUI()
+    {
+        if (polizonText != null)
+            polizonText.text = "Polizones: " + foundPolizones.ToString() + "/" + totalPolizones.ToString();
+    }
+
+    // Métodos públicos para obtener info desde otros scripts si es necesario
+    public float GetTimeRemaining() => timeRemaining;
+    public int GetFoundPolizones() => foundPolizones;
+    public int GetPoints() => points;
+}
