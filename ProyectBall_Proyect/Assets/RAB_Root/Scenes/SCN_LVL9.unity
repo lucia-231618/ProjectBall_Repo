@@ -366,9 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!65 &246924352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1483,9 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1001 &517376551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,9 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1001 &519790096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1724,9 +1718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1 &529545956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,9 +2109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!64 &807833319
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2320,9 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!64 &913553522
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2469,9 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1 &980896836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2905,9 +2891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!65 &1175032491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3140,9 +3124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1 &1253107152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,9 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1 &1318090513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,9 +3612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!114 &1364213509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1219648076997504039, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
@@ -3876,9 +3854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!64 &1479037351
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4013,9 +3989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!64 &1511116421
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4245,7 +4219,7 @@ GameObject:
   - component: {fileID: 1831567553}
   m_Layer: 0
   m_Name: PlayerCam
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4519,9 +4493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!1001 &1914896255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4634,9 +4606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!64 &1938006389
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4906,9 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 1364213509}
-  gameTimer: {fileID: 0}
-  interactKey: 101
-  interactionRange: 3
+  gameUI: {fileID: 0}
 --- !u!65 &2129968475
 BoxCollider:
   m_ObjectHideFlags: 0
