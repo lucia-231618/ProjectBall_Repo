@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 870698602}
   m_Layer: 0
   m_Name: pick up 2
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 1786547211}
   m_Layer: 0
   m_Name: pick up
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
