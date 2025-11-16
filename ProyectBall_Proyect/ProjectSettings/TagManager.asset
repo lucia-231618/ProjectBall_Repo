@@ -9,6 +9,7 @@ TagManager:
   - Interactuable
   - Pickup
   - Powerup
+  - Text
   layers:
   - Default
   - TransparentFX

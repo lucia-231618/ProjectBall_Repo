@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;  // Cambia a using TMPro; si usas TextMeshPro
 using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
-    [Header("UI Elements")]
-    public Text pointsText;      // Texto para mostrar los puntos
-    public Text timerText;       // Texto para mostrar el tiempo restante
-    public Text polizonText;     // Texto para mostrar el contador de polizones
+    [Header("UI Elements")]  // Ya no necesitas asignar estos manualmente
+    private Text timerText;       // Ahora privado, se asigna automáticamente
+    private Text polizonText;     // Ahora privado, se asigna automáticamente
 
     [Header("Audio")]
-    public AudioSource audioSource;  // Para reproducir sonidos de penalización
+    public AudioSource audioSource;  // Esto sí puedes asignarlo manualmente si quieres, o buscarlo automáticamente también
 
     [Header("Game Logic")]
     public float timeLimit = 60f;          // Tiempo máximo para completar el nivel
@@ -19,7 +18,6 @@ public class GameUI : MonoBehaviour
     public string winSceneName = "WinScene";  // Nombre de la escena de victoria
     public string loseSceneName = "LoseScene"; // Nombre de la escena de derrota
 
-    private int points = 0;                // Contador de puntos
     private float timeRemaining;           // Tiempo restante actual
     private int foundPolizones = 0;        // Contador de polizones recogidos
     private bool gameEnded = false;        // Evita que siga actualizando tras terminar
@@ -31,6 +29,14 @@ public class GameUI : MonoBehaviour
 
     void Start()
     {
+        // Asignar automáticamente los textos buscando por nombre
+        timerText = GameObject.Find("TimerText")?.GetComponent<Text>();
+        polizonText = GameObject.Find("PolizonText")?.GetComponent<Text>();
+
+        // Si no encuentra alguno, muestra un warning (opcional, para depuración)
+        if (timerText == null) Debug.LogWarning("No se encontró TimerText en la escena.");
+        if (polizonText == null) Debug.LogWarning("No se encontró PolizonText en la escena.");
+
         ResetGame();  // Reinicia valores al iniciar
     }
 
@@ -47,13 +53,6 @@ public class GameUI : MonoBehaviour
         }
 
         UpdateTimerUI(timeRemaining);    // Actualiza la UI del temporizador
-    }
-
-    // Método para sumar puntos
-    public void AddPoints(int amount)
-    {
-        points += amount;
-        UpdatePointsUI();
     }
 
     // Llamado cuando el jugador recoge un polizón
@@ -101,20 +100,11 @@ public class GameUI : MonoBehaviour
     // Reinicia los valores del juego (llámalo si pierdes o reinicias manualmente)
     public void ResetGame()
     {
-        points = 0;
         timeRemaining = timeLimit;
         foundPolizones = 0;
         gameEnded = false;
-        UpdatePointsUI();
         UpdateTimerUI(timeRemaining);
         UpdatePolizonUI();
-    }
-
-    // Actualiza el texto de puntos
-    private void UpdatePointsUI()
-    {
-        if (pointsText != null)
-            pointsText.text = "Puntos: " + points.ToString();
     }
 
     // Actualiza el texto del timer
@@ -138,5 +128,4 @@ public class GameUI : MonoBehaviour
     // Métodos públicos para obtener info desde otros scripts si es necesario
     public float GetTimeRemaining() => timeRemaining;
     public int GetFoundPolizones() => foundPolizones;
-    public int GetPoints() => points;
 }
