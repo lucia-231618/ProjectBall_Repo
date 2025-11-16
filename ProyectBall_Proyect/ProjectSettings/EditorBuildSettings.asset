@@ -5,18 +5,42 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_MainMenu.unity
+    guid: bafd89a77da94c64480303f9e58d0d24
+  - enabled: 1
     path: Assets/RAB_Root/Scenes/SCN_LVL1.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL2.unity
+    guid: 86f8fe9ee8165dd43ac69d52e9b4e354
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL3.unity
+    guid: 5d21f7a4f23d96c45a226f4c785d1ffe
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL4.unity
+    guid: a7366b583703fb548842d913ea3b817b
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL5.unity
+    guid: cea0e0fd51351484a8aedb43cc2700b7
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL6.unity
+    guid: bee191382b71fa64c9dc24d9f0353096
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL7.unity
+    guid: 56bc35fcfdf17b344893210c3d6b81fd
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL8.unity
+    guid: 2cf3c907a79118843a09ccfd6a16acbf
+  - enabled: 1
     path: Assets/RAB_Root/Scenes/SCN_LVL9.unity
     guid: 36157f7fe733f98489ae242dc55d46d1
-  - enabled: 0
+  - enabled: 1
+    path: Assets/RAB_Root/Scenes/SCN_LVL10.unity
+    guid: 7648bd2f5500546429b439f316ed1b7e
+  - enabled: 1
     path: Assets/RAB_Root/Scenes/SCN_WinScene.unity
     guid: dd759d768f6cc6f469c52681e4f2f139
-  - enabled: 0
-    path: Assets/RAB_Root/Scenes/SCN_LoseScene.unity
-    guid: 309fb609381a6ca44922d8d116329b80
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
