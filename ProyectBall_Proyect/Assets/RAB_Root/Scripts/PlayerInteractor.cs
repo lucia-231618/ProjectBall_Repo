@@ -104,5 +104,28 @@ public class PlayerInteractor : MonoBehaviour
 
         Destroy(powerUp);
     }
-
+    //Intento de hacer asignar a los powerups una función
+    public enum PowerUpType { JumpBoost }  // Lista de tipos
+    public class PowerUp : MonoBehaviour
+    {
+        public PowerUpType tipo = PowerUpType.JumpBoost;  // Elige en Inspector
+        public float duracion = 5f;  // Cuánto dura (segundos)
+        public void Activar(GameObject player)
+        {
+            PlayerController pc = player.GetComponent<PlayerController>();
+            if (pc != null)
+            {
+                // Llama al método correcto según el tipo
+                switch (tipo)
+                {
+                    
+                    case PowerUpType.JumpBoost:
+                        pc.ActivateJumpBoost(duracion);
+                        break;
+                    
+                }
+            }
+            Debug.Log($"Activado: {tipo} por {duracion}s");
+        }
+    }
 }

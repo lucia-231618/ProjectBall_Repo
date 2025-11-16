@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     [Header("Editor References")]
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
         if (playerAudio == null)
             Debug.LogWarning("Falta AudioSource asignado!");
+        //Valores powerup
+        originalJumpForce = jumpForce;
     }
 
     void Update()
@@ -152,6 +155,38 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
+
+    //Intento de añadir los valores a los pickup
+   
+    // Variables para powerups (agrega al inicio de la clase, con las otras variables)
+    private float originalJumpForce;
+    private bool isJumpBoosted = false;
+
+    // En el método Start() (o crea uno si no existe)
+    void Start()
+    {
+        originalJumpForce = jumpForce;  // Guarda el valor original del salto
+    }
+
+    // Método para activar jump boost
+    public void ActivateJumpBoost(float duration)
+    {
+        if (!isJumpBoosted)
+        {
+            isJumpBoosted = true;
+            jumpForce *= 1.5f;  // Aumenta el salto (cambia 1.5f por lo que quieras, ej. 2f)
+            StartCoroutine(DeactivateJumpBoost(duration));
+        }
+    }
+
+    // Corutina para desactivar
+    private System.Collections.IEnumerator DeactivateJumpBoost(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        jumpForce = originalJumpForce;  // Restaura el salto
+        isJumpBoosted = false;
+    }
+
 }
 
 
