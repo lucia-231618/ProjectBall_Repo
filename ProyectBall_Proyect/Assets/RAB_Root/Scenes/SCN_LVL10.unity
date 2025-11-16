@@ -3072,7 +3072,7 @@ PrefabInstance:
       addedObject: {fileID: 2066045179}
     - targetCorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2066045177}
+      addedObject: {fileID: 2066045180}
   m_SourcePrefab: {fileID: 100100000, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
 --- !u!64 &1061340395
 MeshCollider:
@@ -4414,6 +4414,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4670520448709566470, guid: b9c74619dde44de47961a20c399f83ad, type: 3}
+--- !u!114 &2017446892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1219648076997504039, guid: f0e15b1f433960041aa100c52e76eb0f, type: 3}
+  m_PrefabInstance: {fileID: 881294762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cab408b09e56f446b05e19e1668a436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021766878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2967699284760061925, guid: 388b740f7906b1b4ab4bb69f4a0b7cb3, type: 3}
@@ -4559,20 +4570,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7370043300670028658, guid: 19b7e95a091652640b4df605bec6a161, type: 3}
   m_PrefabInstance: {fileID: 1044095016}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2066045177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066045176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86c43d6c4bd3b44ba7c8746930523f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  playerCont: {fileID: 0}
-  gameUI: {fileID: 0}
 --- !u!65 &2066045179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4594,6 +4591,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.451233, y: 2.2319014, z: 0.2438303}
   m_Center: {x: -0.0000000036333532, y: 0.0014663337, z: -0.12191319}
+--- !u!114 &2066045180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066045176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c43d6c4bd3b44ba7c8746930523f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  playerCont: {fileID: 2017446892}
+  gameUI: {fileID: 0}
 --- !u!65 &2107663172
 BoxCollider:
   m_ObjectHideFlags: 0
