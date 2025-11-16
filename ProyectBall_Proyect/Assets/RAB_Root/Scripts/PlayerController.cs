@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Editor References")]
@@ -24,7 +23,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private Transform camara;
+    public GameUI gameUI;  // Agregado para SpeedBoost (asigna en Inspector)
+
     private Rigidbody rb;
+
+    // Variables para power-ups
+    private float originalJumpForce;
+    private bool isJumpBoosted = false;
 
     private void Awake()
     {
@@ -44,7 +49,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 // Buscar cámara con CameraFollow si no hay Main Camera
-                CameraFollow cameraScript = FindFirstObjectByType<CameraFollow>();  // Cambiado para evitar deprecación
+                CameraFollow cameraScript = FindFirstObjectByType<CameraFollow>();
                 if (cameraScript != null)
                     camara = cameraScript.transform;
                 else
@@ -58,7 +63,8 @@ public class PlayerController : MonoBehaviour
 
         if (playerAudio == null)
             Debug.LogWarning("Falta AudioSource asignado!");
-        //Valores powerup
+
+        // Inicializar valores de power-ups
         originalJumpForce = jumpForce;
     }
 
@@ -71,12 +77,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         MoverJugador();
-        // AplicarGravedad();  // Comentado: Unity maneja gravedad por defecto. Descomenta si necesitas custom.
     }
 
     private void MoverJugador()
     {
-        if (camara == null) return;  // Evitar errores si no se asignó
+        if (camara == null) return;
 
         float ValorHorizontal = moveInput.x;
         float ValorVertical = moveInput.y;
@@ -95,26 +100,17 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + direccionplano * speed * Time.fixedDeltaTime);
 
-        // Rotar al jugador hacia la dirección (solo si hay movimiento)
         if (direccionplano != Vector3.zero)
         {
             transform.forward = Vector3.Slerp(transform.forward, direccionplano, 0.1f);
         }
     }
 
-    // private void AplicarGravedad()  // Deshabilitado por defecto
-    // {
-    //     if (!isGrounded)
-    //     {
-    //         rb.AddForce(Vector3.down * 9.8f, ForceMode.Acceleration);
-    //     }
-    // }
-
     void Jump()
     {
         if (isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);  // Usa jumpForce (modificado por power-ups)
             isGrounded = false;
             PlaySFX(0);
         }
@@ -156,38 +152,34 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    //Intento de añadir los valores a los pickup
-   
-    // Variables para powerups (agrega al inicio de la clase, con las otras variables)
-    private float originalJumpForce;
-    private bool isJumpBoosted = false;
-
-    // En el método Start() (o crea uno si no existe)
-    void Start()
-    {
-        originalJumpForce = jumpForce;  // Guarda el valor original del salto
-    }
-
-    // Método para activar jump boost
+    // Métodos para power-ups
     public void ActivateJumpBoost(float duration)
     {
         if (!isJumpBoosted)
         {
             isJumpBoosted = true;
-            jumpForce *= 1.5f;  // Aumenta el salto (cambia 1.5f por lo que quieras, ej. 2f)
+            jumpForce *= 1.5f;  // Aumenta el salto (cambia 1.5f si quieres más/menos, ej. 2f)
             StartCoroutine(DeactivateJumpBoost(duration));
+            Debug.Log("JumpBoost activado por " + duration + " segundos");
         }
     }
 
-    // Corutina para desactivar
     private System.Collections.IEnumerator DeactivateJumpBoost(float duration)
     {
         yield return new WaitForSeconds(duration);
-        jumpForce = originalJumpForce;  // Restaura el salto
+        jumpForce = originalJumpForce;
         isJumpBoosted = false;
+        Debug.Log("JumpBoost desactivado");
     }
 
+    public void ActivateSpeedBoost(float timeToAdd)
+    {
+        if (gameUI != null)
+            gameUI.RemoveTime(-timeToAdd);  // Añade tiempo al contador
+        Debug.Log("SpeedBoost: añadido " + timeToAdd + " segundos al contador");
+    }
 }
+
 
 
 

@@ -1,58 +1,34 @@
 ﻿using UnityEngine;
 
-public class PowerUp : MonoBehaviour
-{
-    public void Activar(GameObject player)
-    {
-        Debug.Log("PowerUp activado!");
-    }
-}
-
-
-public class PickUp : MonoBehaviour
-{
-    public float tiempoQueDa = 5f;
-}
-
-
-// Script de interacción por tecla para el jugador
 public class PlayerInteractor : MonoBehaviour
 {
-    [Header("Sound References")]
-    public PlayerController playerCont;   // Para reproducir sonidos del jugador
-
-    [Header("Timer Reference")]
-    public GameUI gameUI;           // Referencia al script GameUI (maneja polizones, tiempo, etc.)
-
-    private GameObject nearbyObject;      // Objeto con el que se puede interactuar
+    public PlayerController playerCont;  // Referencia a PlayerController
+    public GameUI gameUI;  // Referencia a GameUI
+    private GameObject nearbyObject;
 
     void Update()
     {
-       
+        // Agrega aquí: if (Input.GetKeyDown(KeyCode.E)) InteractWithObject();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Detección existente para Polizon e Interactuable
         if (other.CompareTag("Polizon") || other.CompareTag("Interactuable"))
         {
             nearbyObject = other.gameObject;
         }
-        // NUEVO: Detección automática para Pickups y PowerUps
-        else if (other.CompareTag("Pickup"))  // Asume tag "Pickup" para objetos recolectables
+        else if (other.CompareTag("Pickup"))
         {
             CollectPickUp(other.gameObject);
         }
-        else if (other.CompareTag("Powerup"))  // Asume tag "PowerUp"
+        else if (other.CompareTag("Powerup"))  // Tag genérico para power-ups
         {
             CollectPowerUp(other.gameObject);
         }
     }
 
-
     private void OnTriggerExit(Collider other)
     {
-        // Limpiamos la referencia si el jugador se aleja
         if (other.gameObject == nearbyObject)
         {
             nearbyObject = null;
@@ -63,29 +39,27 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (nearbyObject == null) return;
 
-        // Caso 1: Polizón
         if (nearbyObject.CompareTag("Polizon"))
         {
-            nearbyObject.SetActive(false);                 // Desactiva el objeto
+            nearbyObject.SetActive(false);
             if (gameUI != null)
-                gameUI.AddPolizon();                    // Incrementa contador
+                gameUI.AddPolizon();
             if (playerCont != null)
-                playerCont.PlaySFX(1);                    // Reproduce sonido de recogida
+                playerCont.PlaySFX(1);
         }
 
-        nearbyObject = null; // Limpiamos la referencia
+        nearbyObject = null;
     }
+
     private void CollectPickUp(GameObject pickUp)
     {
-        float tiempoSumado = 5f; // tiempo por defecto
-
+        float tiempoSumado = 5f;
         PickUp pickUpScript = pickUp.GetComponent<PickUp>();
         if (pickUpScript != null)
             tiempoSumado = pickUpScript.tiempoQueDa;
 
         if (gameUI != null)
             gameUI.RemoveTime(-tiempoSumado);
-
 
         if (playerCont != null)
             playerCont.PlaySFX(1);
@@ -97,35 +71,23 @@ public class PlayerInteractor : MonoBehaviour
     {
         PowerUp powerUpScript = powerUp.GetComponent<PowerUp>();
         if (powerUpScript != null)
-            powerUpScript.Activar(gameObject);
+        {
+            switch (powerUpScript.tipo)
+            {
+                case PowerUp.PowerUpType.JumpBoost:
+                    if (playerCont != null)
+                        playerCont.ActivateJumpBoost(powerUpScript.duracion);
+                    break;
+                case PowerUp.PowerUpType.SpeedBoost:
+                    if (playerCont != null)
+                        playerCont.ActivateSpeedBoost(powerUpScript.duracion);  // Usa duración como tiempo añadido
+                    break;
+            }
+        }
 
         if (playerCont != null)
             playerCont.PlaySFX(3);
 
-        Destroy(powerUp);
-    }
-    //Intento de hacer asignar a los powerups una función
-    public enum PowerUpType { JumpBoost }  // Lista de tipos
-    public class PowerUp : MonoBehaviour
-    {
-        public PowerUpType tipo = PowerUpType.JumpBoost;  // Elige en Inspector
-        public float duracion = 5f;  // Cuánto dura (segundos)
-        public void Activar(GameObject player)
-        {
-            PlayerController pc = player.GetComponent<PlayerController>();
-            if (pc != null)
-            {
-                // Llama al método correcto según el tipo
-                switch (tipo)
-                {
-                    
-                    case PowerUpType.JumpBoost:
-                        pc.ActivateJumpBoost(duracion);
-                        break;
-                    
-                }
-            }
-            Debug.Log($"Activado: {tipo} por {duracion}s");
-        }
+        Destroy(powerUp);  // Desaparece el power-up
     }
 }
