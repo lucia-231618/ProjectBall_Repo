@@ -1160,6 +1160,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 472900062}
+    - targetCorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 472900064}
   m_SourcePrefab: {fileID: 100100000, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
 --- !u!4 &472900060 stripped
 Transform:
@@ -1206,6 +1209,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
   gameUI: {fileID: 0}
+--- !u!114 &472900064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472900061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65346f78d32a2a64d878c37e1badb24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUp
+  tipo: 1
+  duracion: 5
 --- !u!64 &520543212
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2940,6 +2957,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1241148144}
+    - targetCorrespondingSourceObject: {fileID: 6965821067544458296, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1241148146}
   m_SourcePrefab: {fileID: 100100000, guid: a610c52de611e244dbe9b6a800cf193b, type: 3}
 --- !u!4 &1241148142 stripped
 Transform:
@@ -2986,6 +3006,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   playerCont: {fileID: 0}
   gameUI: {fileID: 0}
+--- !u!114 &1241148146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241148143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65346f78d32a2a64d878c37e1badb24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUp
+  tipo: 1
+  duracion: 5
 --- !u!1 &1253107152
 GameObject:
   m_ObjectHideFlags: 0
