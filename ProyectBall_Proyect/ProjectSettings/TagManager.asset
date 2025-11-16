@@ -9,8 +9,9 @@ TagManager:
   - Interactuable
   - Pickup
   - Powerup
-  - TimerTextTag
-  - PolizonTextTag
+  - Canvas
+  - CombinedText
+  - TimerText
   layers:
   - Default
   - TransparentFX
