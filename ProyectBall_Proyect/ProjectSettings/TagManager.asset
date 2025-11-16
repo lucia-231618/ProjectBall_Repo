@@ -9,7 +9,8 @@ TagManager:
   - Interactuable
   - Pickup
   - Powerup
-  - Text
+  - TimerTextTag
+  - PolizonTextTag
   layers:
   - Default
   - TransparentFX
